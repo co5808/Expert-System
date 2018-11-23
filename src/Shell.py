@@ -25,9 +25,9 @@ def rule_repr(rule):
 
 # Funkcija ispisuje radnu memoriju
 def printRM():
-    print ("Radna memorija:")
+    print "Radna memorija:"
     for r,v in RM.items():
-        print (r, " = ", v)
+        print r, " = ", v
 
 # Funkcija vraca listu svih konfliktnih pravila, odnosno pravila cija desna strana 
 # izvodi vrijednost danog parametra
@@ -77,19 +77,19 @@ def parameterInput(param,RM):
 # i sva pravila sadrzana u bazi znanja
 # print facts
 def printKnowledgeBase(parameters,rules):
-    print ('-'*105)
-    print ('|' + '\t'*6 + 'Fact' + '\t'*6 + '|')
-    print ('-'*105 + '\n')
+    print '-'*105
+    print '|' + '\t'*6 + 'Fact' + '\t'*6 + '|'
+    print '-'*105 + '\n'
     
-    print ("Atributi:")
+    print "Atributi:"
     for attr,value in parameters.items():
-        print (attr + " = " + " | ".join(value))
+        print attr + " = " + " | ".join(value)
     
-    print ("\nPravila:")
+    print "\nPravila:"
     for i,rule in enumerate(rules):
-        print (str(i+1) + ") " + rule_repr(rule))
+        print str(i+1) + ") " + rule_repr(rule)
         
-    print ('-'*105 + '\n')
+    print '-'*105 + '\n'
         
 
 ############################################################################################
@@ -136,13 +136,13 @@ while(True):
     
     # ako nije pronadeno nijedno konfliktno pravilo prekini petlju i obavijesti korisnika
     if remainingRules == 0:
-        print ('Premalo podataka')
+        print 'Premalo podataka'
         break
     
     # ispisi skup konfliktnih pravila i stanje radne memorije
-    print ('Konfliktna pravila: ')
+    print 'Konfliktna pravila: '
     for cr in conflictRules:
-        print (rule_repr(cr))
+        print rule_repr(cr)
     printRM()
     
     # U petlji prolazi kroz skup konfliktnih pravila      
@@ -155,7 +155,7 @@ while(True):
             (RHSkey,RHSvalue) = cr['RHS'].items()[0]
             RM[RHSkey] = RHSvalue
             curr_goal = goals.pop()
-            print ("Ostvaren je cilj: "  + curr_goal + " = " + RHSvalue)
+            print "Ostvaren je cilj: "  + curr_goal + " = " + RHSvalue
             new_goal = True
             break
     
@@ -212,12 +212,12 @@ while(True):
         if remainingRules == 0 and not new_goal:
             curr_goal = goals.pop()
             checked_goals.append(curr_goal)
-            print ('Neostvarivi cilj: ' + curr_goal)
+            print 'Neostvarivi cilj: ' + curr_goal
             
-    print ('-'*100)
+    print '-'*100
                     
                     
-print ('*'*48 + "KRAJ RADA" + '*'*48)
+print '*'*48 + "KRAJ RADA" + '*'*48
                     
     
     

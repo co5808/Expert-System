@@ -1,3 +1,4 @@
+
 '''
 Created on Mar 5, 2014
 
@@ -15,11 +16,13 @@ Pravila:
     U memoriji: { 'LHS':{'atribut1':['vrijednost1','vrijednost2',...],'atribut2':['vrijednost1','vrijednost2']}, 
                   'RHS':{'atribut':'vrijednost'} } 
 
-@author: Viktor Berger
+@author: Viktor BergerJ
 '''
 
 import copy
+import os
 
+path = os.getcwd() + '\\base\\pravo.txt'
 def parse(path):
     parameters = {}
     rules = []
@@ -53,5 +56,5 @@ def parse(path):
             
     return parameters, rules
      
-        
+test = parse(path)
     
